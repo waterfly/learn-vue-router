@@ -31,6 +31,10 @@ import { useRouter, useRoute } from "vue-router";
 const router = useRouter();
 const target = ref(0);
 
+const props = defineProps(["id", "objectModel"]);
+
+console.log("Page B", props.id, props.objectModel);
+
 const click = () => {
   router.go(-2);
 };

@@ -43,10 +43,19 @@ const click = (type) => {
         };
         router.push({
           name: "PageA",
-          query: {
-            id: 1,
+          // path: "/a/",
+          // query: {
+          //   id: 1,
+          // },
+          params: {
+            userId: 5,
+            aaa: 111,
+            testaaa: {
+              a: 1,
+              b: 2,
+              c: 3,
+            },
           },
-          params: { test: 5 },
           meta: {
             m1: 1,
             m2: 2,
@@ -61,13 +70,16 @@ const click = (type) => {
       break;
     case 2:
       {
-        router.push({ name: "PageB" });
+        router.push({ name: "PageB", params: { id: 111 } });
       }
       break;
     case 3:
       {
-        // router.push({ name: "PageC" });
-        console.log(router.resolve({ name: "PageC" }));
+        router.push({ name: "PageC" }).then((res) => {
+          console.log("res", res);
+        });
+
+        // console.log(router.resolve({ name: "PageC" }));
       }
       break;
   }

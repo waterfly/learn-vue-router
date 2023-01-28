@@ -19,9 +19,10 @@
   </div>
 </template>
 
-<!-- <script>
+<!-- <script >
 export default {
   beforeRouteEnter: (to, from, next) => {
+    debugger;
     console.log("组件守卫 beforeRouteEnter", from, to);
     next((vm) => {
       console.log("组件守卫 beforeRouteEnter next 钩子", vm);
@@ -46,8 +47,8 @@ export default defineComponent({
     },
   },
   mounted() {
-    // console.log("params", route.params.value);
-    // console.log("params.test", route.params.test);
+    console.log("params", this.$route.params);
+    console.log("params.test", this.$route.params.test);
   },
   beforeRouteLeave(to, from) {
     // 在渲染该组件的对应路由被验证前调用
@@ -65,7 +66,7 @@ export default defineComponent({
   beforeRouteEnter(to, from, next) {
     console.log("PageA 组件守卫 beforeRouteEnter", from, to);
     next((vm) => {
-      console.log("PageA 组件守卫 beforeRouteEnter next 钩子", vm);
+      console.log("PageA 组件守卫 beforeRouteEnter next 钩子 111", vm);
     });
     return true;
   },

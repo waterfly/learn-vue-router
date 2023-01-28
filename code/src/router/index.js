@@ -15,7 +15,7 @@ const routes = [
     component: () => import("@/page/Home.vue"),
   },
   {
-    path: "/a/:test",
+    path: "/a/:userId",
     name: "PageA",
     props: true,
     component: () => import("@/page/PageA.vue"),
@@ -29,14 +29,16 @@ const routes = [
         path: "a/sub/:userId",
         name: "pageSub",
         component: () => import("@/page/PageASub.vue"),
-        props: true,
       },
     ],
   },
   {
-    path: "/b",
+    path: "/b/:id",
     name: "PageB",
     component: () => import("@/page/PageB.vue"),
+    props: {
+      objectModel: 123,
+    },
   },
   {
     path: "/c",
